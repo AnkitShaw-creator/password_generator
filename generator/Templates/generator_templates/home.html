@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Genrator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 style="margin-top:40px;">Hi there!</h1>
+        <br><br>
+        <h3>Please make a selection for the type of password you need</h3>
+        <form action="{% url 'password' %}">
+            <div class="form-group">
+                What should the length of the password be?
+                <select name="length" class="form-control">
+                    <option value="6">6</option>
+                    <option value="7" selected="selected">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select><br>
+                Do you want numbers in your password? &nbsp;&nbsp;
+                <input type="checkbox" value="on" name="numbers"><br>
+                Do you want uppercase letter in your password? &nbsp;&nbsp;
+                <input type="checkbox" value="on" name="uppercase"><br>
+                Do you want lowercase letter in your password? &nbsp;&nbsp;
+                <input type="checkbox" value="on" name="lowercase" checked="checked"><br>
+                Do you want special character letter in your password? &nbsp;&nbsp;
+                <input type="checkbox" value="on" name="special" >
+                <br><br>
+                <input type="submit" value="Generate Password" class="btn btn-primary">
+            </div>
+        </form>
+        <br><br>
+        <a class="btn btn-outline-info" href="{% url 'about' %}" role="button">About the application</a>
+    </div>
+    
+</body>
+</html>
